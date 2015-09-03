@@ -14,6 +14,7 @@
 		F26005C01B97D841001F2CEE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F26005BF1B97D841001F2CEE /* Images.xcassets */; };
 		F26005C31B97D841001F2CEE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F26005C11B97D841001F2CEE /* LaunchScreen.xib */; };
 		F26005CF1B97D841001F2CEE /* InTownTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26005CE1B97D841001F2CEE /* InTownTests.swift */; };
+		F26005DA1B97D890001F2CEE /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F26005D91B97D890001F2CEE /* Welcome.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		F26005C81B97D841001F2CEE /* InTownTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InTownTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F26005CD1B97D841001F2CEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F26005CE1B97D841001F2CEE /* InTownTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InTownTests.swift; sourceTree = "<group>"; };
+		F26005D91B97D890001F2CEE /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		F26005B21B97D841001F2CEE /* InTown */ = {
 			isa = PBXGroup;
 			children = (
+				F26005D81B97D878001F2CEE /* Welcome */,
 				F26005B51B97D841001F2CEE /* AppDelegate.swift */,
 				F26005BA1B97D841001F2CEE /* ViewController.swift */,
 				F26005BC1B97D841001F2CEE /* Main.storyboard */,
@@ -113,6 +116,14 @@
 				F26005CD1B97D841001F2CEE /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F26005D81B97D878001F2CEE /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				F26005D91B97D890001F2CEE /* Welcome.storyboard */,
+			);
+			name = Welcome;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F26005BE1B97D841001F2CEE /* Main.storyboard in Resources */,
+				F26005DA1B97D890001F2CEE /* Welcome.storyboard in Resources */,
 				F26005C31B97D841001F2CEE /* LaunchScreen.xib in Resources */,
 				F26005C01B97D841001F2CEE /* Images.xcassets in Resources */,
 			);
