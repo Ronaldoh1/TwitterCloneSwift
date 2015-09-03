@@ -13,6 +13,9 @@ class SignIn: UIViewController {
 @IBOutlet weak var passwordTextField: UITextField!
  @IBOutlet weak var emailTextField: UITextField!
 
+    
+let rootRef = Firebase(url: "https://intown.firebaseio.com/")
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,6 +23,41 @@ class SignIn: UIViewController {
         self.view.backgroundColor = UIColor(red: 255.0/255.0, green: 94.0/255.0, blue: 1.0/255.0, alpha: 1.0)
     }
 
+    @IBAction func onSignInButtonTapped(sender: UIButton) {
+
+        var error:NSString = ""
+        var titleError:NSString = ""
+
+        if self.emailTextField.text == "" || self.passwordTextField.text == ""{
+            titleError = "Try Again"
+
+            error = "All fields are required!"
+
+            self.displayMessage(titleError, message: error)
+
+
+        }else{
+
+            rootRef.authUser(self.emailTextField.text, password: self.passwordTextField.text, withCompletionBlock: { (error, authData) -> Void in
+
+                if error != nil {
+                    println(error)
+                    println("There is an error with the given informatin")
+
+                    self.displayMessage("Please Try again", message: "There was an error with the information provided")
+
+                }else{
+
+                    //self.performSegueWithIdentifier("loginAndSignupComplete" , sender: self)
+
+                    println("login success")
+                }
+            })
+
+        }
+
+
+    }
 
     @IBAction func onSignUpButtonTapped(sender: UIButton) {
 
@@ -55,4 +93,15 @@ class SignIn: UIViewController {
 
         self.view.endEditing(true)
     }
+
+
+    func displayMessage(title: NSString, message:NSString){
+
+        var alert = UIAlertController(title: title as String, message: message as String, preferredStyle: UIAlertControllerStyle.Alert)
+
+        alert.addAction(UIAlertAction(title: "Got it!", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+
+    }
+
 }

@@ -13,7 +13,7 @@ class SignUp: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var passwordTextfield: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
-    let ref = Firebase(url: "https://intown.firebaseio.com/")
+    let rootRef = Firebase(url: "https://intown.firebaseio.com/")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,18 +28,77 @@ class SignUp: UIViewController, UITextFieldDelegate{
 @IBAction func onSignUpButtonTapped(sender: UIButton) {
 
 
+    var error:NSString = ""
+    var titleError:NSString = ""
+
+    if self.emailTextField.text == "" || self.passwordTextfield.text == "" {
 
 
-//    self.root .createUser("bobtony@example.com", password: "correcthorsebatterystaple",
-//        withValueCompletionBlock: { error, result in
-//
-//            if error != nil {
-//                // There was an error creating the account
-//            } else {
-//                let uid = result["uid"] as? String
-//                println("Successfully created user account with uid: \(uid)")
-//            }
-//    })
+        titleError = "Try Again"
+
+        error = "All fields are required!"
+
+        self.displayMessage(titleError, message: error)
+
+    }else{
+
+
+        //first we need to create an account for the user.
+        self.rootRef.createUser(self.emailTextField.text, password: self.passwordTextfield.text, withValueCompletionBlock: { (error, retult) -> Void in
+
+
+
+            if error != nil{
+
+
+                self.displayMessage("Try again", message: "There was an error signing up")
+
+            }else{
+
+                //login the user
+                self.rootRef.authUser(self.emailTextField.text, password: self.passwordTextfield.text, withCompletionBlock: { (error, authData) -> Void in
+
+
+                    if error != nil {
+
+                        self.displayMessage("Cannot Login", message: "Please try to login again")
+
+                    }else{
+
+                        //create a userid for all new users - addd additional properties as needed. 
+
+                        var userId = authData.uid
+                        let newUser = ["provider": authData.provider,
+                            "email" : authData.providerData["email"] as? NSString as! String,
+                            "post": "",
+                            "username": self.usernameTextField.text]
+
+
+                        self.rootRef.childByAppendingPath("Users").childByAppendingPath(authData.uid).setValue(newUser)
+                        
+
+                    }
+
+
+
+                })
+                
+                
+                
+            }
+            
+            
+            
+            
+            
+        })
+
+
+
+
+
+
+    }
 
 
  }
@@ -74,6 +133,13 @@ func textFieldShouldReturn(textField: UITextField) -> Bool // called when 'retur
         self.view.endEditing(true)
     }
 
+    func displayMessage(title: NSString, message:NSString){
 
+        var alert = UIAlertController(title: title as String, message: message as String, preferredStyle: UIAlertControllerStyle.Alert)
+
+        alert.addAction(UIAlertAction(title: "Got it!", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+        
+    }
 
 }
