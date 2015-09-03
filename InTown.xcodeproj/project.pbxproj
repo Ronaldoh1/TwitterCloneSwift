@@ -24,6 +24,11 @@
 		F26005E91B97D9D5001F2CEE /* twitterLoginButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F26005E11B97D9D5001F2CEE /* twitterLoginButton.png */; };
 		F26005EA1B97D9D5001F2CEE /* facebookLoginButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F26005E21B97D9D5001F2CEE /* facebookLoginButton.png */; };
 		F26005F01B97DB2A001F2CEE /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26005EF1B97DB29001F2CEE /* WelcomeVC.swift */; };
+		F26005F51B97E0D0001F2CEE /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F26005F41B97E0D0001F2CEE /* SignIn.storyboard */; };
+		F26005F71B97E0DE001F2CEE /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F26005F61B97E0DE001F2CEE /* SignUp.storyboard */; };
+		F26005F91B97E28C001F2CEE /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26005F81B97E28C001F2CEE /* SignIn.swift */; };
+		F26005FB1B97E2A1001F2CEE /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26005FA1B97E2A1001F2CEE /* SignUp.swift */; };
+		F26005FE1B97E718001F2CEE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26005FD1B97E718001F2CEE /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +63,11 @@
 		F26005E11B97D9D5001F2CEE /* twitterLoginButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitterLoginButton.png; sourceTree = "<group>"; };
 		F26005E21B97D9D5001F2CEE /* facebookLoginButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebookLoginButton.png; sourceTree = "<group>"; };
 		F26005EF1B97DB29001F2CEE /* WelcomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
+		F26005F41B97E0D0001F2CEE /* SignIn.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
+		F26005F61B97E0DE001F2CEE /* SignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
+		F26005F81B97E28C001F2CEE /* SignIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
+		F26005FA1B97E2A1001F2CEE /* SignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
+		F26005FD1B97E718001F2CEE /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +110,9 @@
 			isa = PBXGroup;
 			children = (
 				F26005B51B97D841001F2CEE /* AppDelegate.swift */,
+				F26005FC1B97E6FF001F2CEE /* Data */,
+				F26005F21B97E085001F2CEE /* SignUp */,
+				F26005F31B97E092001F2CEE /* SignIn */,
 				F26005D81B97D878001F2CEE /* Welcome */,
 				F26005F11B97DB55001F2CEE /* Feed */,
 				F26005EB1B97D9DC001F2CEE /* Images */,
@@ -193,6 +206,33 @@
 			name = Feed;
 			sourceTree = "<group>";
 		};
+		F26005F21B97E085001F2CEE /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				F26005F61B97E0DE001F2CEE /* SignUp.storyboard */,
+				F26005F81B97E28C001F2CEE /* SignIn.swift */,
+			);
+			name = SignUp;
+			sourceTree = "<group>";
+		};
+		F26005F31B97E092001F2CEE /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				F26005F41B97E0D0001F2CEE /* SignIn.storyboard */,
+				F26005FA1B97E2A1001F2CEE /* SignUp.swift */,
+			);
+			name = SignIn;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		F26005FC1B97E6FF001F2CEE /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F26005FD1B97E718001F2CEE /* User.swift */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -274,6 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F26005E41B97D9D5001F2CEE /* spa.png in Resources */,
+				F26005F51B97E0D0001F2CEE /* SignIn.storyboard in Resources */,
 				F26005E61B97D9D5001F2CEE /* us.png in Resources */,
 				F26005E31B97D9D5001F2CEE /* fr.png in Resources */,
 				F26005BE1B97D841001F2CEE /* Feed.storyboard in Resources */,
@@ -282,6 +323,7 @@
 				F26005E91B97D9D5001F2CEE /* twitterLoginButton.png in Resources */,
 				F26005E81B97D9D5001F2CEE /* IntownLogo.png in Resources */,
 				F26005C31B97D841001F2CEE /* LaunchScreen.xib in Resources */,
+				F26005F71B97E0DE001F2CEE /* SignUp.storyboard in Resources */,
 				F26005C01B97D841001F2CEE /* Images.xcassets in Resources */,
 				F26005E71B97D9D5001F2CEE /* defaultImage.png in Resources */,
 				F26005E51B97D9D5001F2CEE /* br.png in Resources */,
@@ -303,9 +345,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F26005BB1B97D841001F2CEE /* ViewController.swift in Sources */,
+				F26005FB1B97E2A1001F2CEE /* SignUp.swift in Sources */,
 				F26005B91B97D841001F2CEE /* InTown.xcdatamodeld in Sources */,
+				F26005F91B97E28C001F2CEE /* SignIn.swift in Sources */,
 				F26005B61B97D841001F2CEE /* AppDelegate.swift in Sources */,
 				F26005F01B97DB2A001F2CEE /* WelcomeVC.swift in Sources */,
+				F26005FE1B97E718001F2CEE /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

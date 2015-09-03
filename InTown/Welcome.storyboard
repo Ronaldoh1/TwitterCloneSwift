@@ -8,7 +8,7 @@
         <!--Intial Screen-->
         <scene sceneID="Q6K-eP-pTU">
             <objects>
-                <viewController title="Intial Screen" id="ay2-g7-qOm" customClass="WelcomeVC" sceneMemberID="viewController">
+                <viewController title="Intial Screen" id="ay2-g7-qOm" customClass="WelcomeVC" customModule="InTown" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZoU-PQ-q2P"/>
                         <viewControllerLayoutGuide type="bottom" id="q8A-eC-D5S"/>
@@ -17,18 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pce-Hv-OfQ">
-                                <rect key="frame" x="16" y="338" width="140" height="36"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="140" id="53t-hX-qHa"/>
-                                    <constraint firstAttribute="height" constant="36" id="Mvm-s8-q0K"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Sign In">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IntownLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="hE4-tK-bCy">
+                                <rect key="frame" x="0.0" y="64" width="320" height="229"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uCa-JS-Mj3">
                                 <rect key="frame" x="158" y="328" width="4" height="21"/>
                                 <constraints>
@@ -50,6 +41,9 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onSignUpButtonTapped:" destination="ay2-g7-qOm" eventType="touchUpInside" id="YvS-DL-6uH"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fbb-2U-f4l">
                                 <rect key="frame" x="9" y="404" width="141" height="40"/>
@@ -80,9 +74,21 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IntownLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="hE4-tK-bCy">
-                                <rect key="frame" x="0.0" y="64" width="320" height="229"/>
-                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pce-Hv-OfQ">
+                                <rect key="frame" x="16" y="338" width="140" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="53t-hX-qHa"/>
+                                    <constraint firstAttribute="height" constant="36" id="Mvm-s8-q0K"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Sign In">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onSignInButtonTapped:" destination="ay2-g7-qOm" eventType="touchUpInside" id="RX0-Pc-mrz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="GlW-h3-ulT" firstAttribute="leading" secondItem="Fbb-2U-f4l" secondAttribute="trailing" constant="7" id="2hI-xV-erZ"/>
