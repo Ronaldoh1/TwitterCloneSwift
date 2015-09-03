@@ -8,7 +8,7 @@
         <!--Welcome Back!-->
         <scene sceneID="noO-dO-DMF">
             <objects>
-                <viewController storyboardIdentifier="SignInVC" id="gC7-0J-aAh" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignInVC" id="gC7-0J-aAh" customClass="SignIn" customModule="InTown" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VhL-CU-rKT"/>
                         <viewControllerLayoutGuide type="bottom" id="4rD-xm-ObL"/>
@@ -17,6 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IntownLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Qe4-bJ-DoU">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="253"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3UA-iU-BXs">
                                 <rect key="frame" x="16" y="387" width="288" height="45"/>
                                 <color key="backgroundColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
@@ -27,6 +30,9 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onSignUpButtonTapped:" destination="gC7-0J-aAh" eventType="touchUpInside" id="RLJ-Gy-kLj"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UGJ-J7-Tk3">
                                 <rect key="frame" x="0.0" y="251" width="320" height="40"/>
@@ -46,6 +52,9 @@
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onForgotPasswordButtonTapped:" destination="gC7-0J-aAh" eventType="touchUpInside" id="Wmg-XZ-iFa"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SBJ-P1-TW7">
                                 <rect key="frame" x="0.0" y="294" width="320" height="50"/>
@@ -76,6 +85,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="gC7-0J-aAh" id="bPB-jc-pdh"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QgJ-Pg-OCQ">
                                 <rect key="frame" x="137" y="442" width="48" height="30"/>
@@ -83,10 +95,10 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onCancelButtonTapped:" destination="gC7-0J-aAh" eventType="touchUpInside" id="cdh-5N-F9j"/>
+                                </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IntownLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Qe4-bJ-DoU">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="253"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -123,6 +135,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="1Id-GO-L3v" id="W3g-fe-Wmo"/>
+                        <outlet property="passwordTextField" destination="UGJ-J7-Tk3" id="f1g-j5-6fo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tDh-G0-5dp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

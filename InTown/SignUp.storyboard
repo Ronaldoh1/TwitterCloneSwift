@@ -8,7 +8,7 @@
         <!--Let's Get Started-->
         <scene sceneID="HsG-GA-GgI">
             <objects>
-                <viewController storyboardIdentifier="SignUpVC" id="HuZ-7p-2Fg" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpVC" id="HuZ-7p-2Fg" customClass="SignUp" customModule="InTown" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5np-3E-Ooq"/>
                         <viewControllerLayoutGuide type="bottom" id="vvA-mO-nml"/>
@@ -44,6 +44,9 @@
                                         <exclude reference="8C5-pq-qtP"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="HuZ-7p-2Fg" id="01P-yq-1z4"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TCo-NN-Bn0">
                                 <rect key="frame" x="0.0" y="229" width="320" height="40"/>
@@ -53,6 +56,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="HuZ-7p-2Fg" id="TMi-mc-2K0"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xGf-FZ-cA8">
                                 <rect key="frame" x="0.0" y="267" width="320" height="40"/>
@@ -62,6 +68,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="HuZ-7p-2Fg" id="yDd-TL-aau"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bUS-iN-cxr">
                                 <rect key="frame" x="0.0" y="309" width="320" height="50"/>
@@ -73,6 +82,9 @@
                                     <color key="titleColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onSignUpButtonTapped:" destination="HuZ-7p-2Fg" eventType="touchUpInside" id="8nO-iU-urU"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QG4-Fb-kHn">
                                 <rect key="frame" x="16" y="382" width="288" height="19"/>
@@ -83,6 +95,9 @@
                                     <color key="titleColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="onTermAndConditionsButtonTapped:" destination="HuZ-7p-2Fg" eventType="touchUpInside" id="3Dp-Qn-Wre"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F5b-yr-vze">
                                 <rect key="frame" x="91" y="428" width="141" height="40"/>
@@ -92,6 +107,9 @@
                                 <state key="normal" title="Cancel">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onCancelButtonTapped:" destination="HuZ-7p-2Fg" eventType="touchUpInside" id="2QP-JZ-PQC"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -129,6 +147,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="7IV-ZD-Rqw" id="jhZ-AN-ooS"/>
+                        <outlet property="passwordTextfield" destination="xGf-FZ-cA8" id="gkM-qk-ecb"/>
+                        <outlet property="usernameTextField" destination="TCo-NN-Bn0" id="wBn-62-KQU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w5u-Cv-OyU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

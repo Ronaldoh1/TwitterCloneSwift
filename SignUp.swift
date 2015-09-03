@@ -8,7 +8,12 @@
 
 import UIKit
 
-class SignUp: UIViewController {
+class SignUp: UIViewController, UITextFieldDelegate{
+
+    @IBOutlet weak var passwordTextfield: UITextField!
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    let ref = Firebase(url: "https://intown.firebaseio.com/")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,20 +23,57 @@ class SignUp: UIViewController {
         self.view.backgroundColor = UIColor(red: 255.0/255.0, green: 94.0/255.0, blue: 1.0/255.0, alpha: 1.0)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
 
-    /*
-    // MARK: - Navigation
+@IBAction func onSignUpButtonTapped(sender: UIButton) {
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+
+
+
+//    self.root .createUser("bobtony@example.com", password: "correcthorsebatterystaple",
+//        withValueCompletionBlock: { error, result in
+//
+//            if error != nil {
+//                // There was an error creating the account
+//            } else {
+//                let uid = result["uid"] as? String
+//                println("Successfully created user account with uid: \(uid)")
+//            }
+//    })
+
+
+ }
+
+@IBAction func onTermAndConditionsButtonTapped(sender: UIButton) {
+
+
+
+
+
     }
-    */
+
+
+    @IBAction func onCancelButtonTapped(sender: UIButton) {
+
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+
+
+func textFieldShouldReturn(textField: UITextField) -> Bool // called when 'return' key pressed. return NO to ignore.
+    {
+        textField.resignFirstResponder()
+        return true;
+    }
+
+
+ override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+
+        self.emailTextField.resignFirstResponder()
+        self.passwordTextfield.resignFirstResponder()
+        self.usernameTextField.resignFirstResponder()
+        self.view.endEditing(true)
+    }
+
+
 
 }

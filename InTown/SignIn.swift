@@ -10,6 +10,9 @@ import UIKit
 
 class SignIn: UIViewController {
 
+@IBOutlet weak var passwordTextField: UITextField!
+ @IBOutlet weak var emailTextField: UITextField!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,5 +21,38 @@ class SignIn: UIViewController {
     }
 
 
+    @IBAction func onSignUpButtonTapped(sender: UIButton) {
 
+        var storyboard = UIStoryboard(name: "SignUp", bundle: nil)
+        var controller = storyboard.instantiateViewControllerWithIdentifier("SignUpVC") as! UIViewController
+        self.presentViewController(controller, animated:true, completion: nil)
+
+    }
+
+    @IBAction func onForgotPasswordButtonTapped(sender: UIButton) {
+
+
+
+
+    }
+    @IBAction func onCancelButtonTapped(sender: UIButton) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+
+
+    }
+
+    func textFieldShouldReturn(textField: UITextField) -> Bool // called when 'return' key pressed. return NO to ignore.
+    {
+        textField.resignFirstResponder()
+        return true;
+    }
+
+
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+
+        self.emailTextField.resignFirstResponder()
+        self.passwordTextField.resignFirstResponder()
+
+        self.view.endEditing(true)
+    }
 }
