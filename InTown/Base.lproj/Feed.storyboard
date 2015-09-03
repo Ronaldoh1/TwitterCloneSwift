@@ -4,16 +4,47 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--What's Happening?-->
         <scene sceneID="XxC-oQ-8tw">
             <objects>
-                <tableViewController id="WRc-RZ-RND" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="98" sectionHeaderHeight="22" sectionFooterHeight="22" id="QPY-c9-5Lt">
+                <tableViewController id="WRc-RZ-RND" customClass="FeedTVC" customModule="InTown" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="QPY-c9-5Lt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="CVf-Ro-MpY">
+                            <rect key="frame" x="0.0" y="64" width="320" height="90"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, " translatesAutoresizingMaskIntoConstraints="NO" id="5sV-fx-qo8">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                </textView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tql-F0-vHK">
+                                    <rect key="frame" x="0.0" y="48" width="320" height="42"/>
+                                    <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" title="Post">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="Tql-F0-vHK" firstAttribute="top" secondItem="CVf-Ro-MpY" secondAttribute="top" constant="48" id="2xs-HR-65R"/>
+                                <constraint firstAttribute="bottom" secondItem="5sV-fx-qo8" secondAttribute="bottom" constant="40" id="BAs-W0-tNw"/>
+                                <constraint firstAttribute="trailing" secondItem="Tql-F0-vHK" secondAttribute="trailing" id="IO4-bO-ty8"/>
+                                <constraint firstAttribute="trailing" secondItem="5sV-fx-qo8" secondAttribute="trailing" id="Muk-HA-urS"/>
+                                <constraint firstItem="Tql-F0-vHK" firstAttribute="leading" secondItem="CVf-Ro-MpY" secondAttribute="leading" id="SEs-NP-9B5"/>
+                                <constraint firstItem="5sV-fx-qo8" firstAttribute="top" secondItem="CVf-Ro-MpY" secondAttribute="top" id="TZ1-Bn-4fH"/>
+                                <constraint firstItem="5sV-fx-qo8" firstAttribute="leading" secondItem="CVf-Ro-MpY" secondAttribute="leading" id="oqv-bL-xIP"/>
+                                <constraint firstAttribute="bottom" secondItem="Tql-F0-vHK" secondAttribute="bottom" id="qPI-lN-pcz"/>
+                            </constraints>
+                        </view>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="98" id="b9W-6h-0eQ">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="b9W-6h-0eQ">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b9W-6h-0eQ" id="Y5E-lU-OyO">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -25,17 +56,20 @@
                             <outlet property="delegate" destination="WRc-RZ-RND" id="epd-Nh-GKs"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="5nA-OQ-A3U"/>
+                    <navigationItem key="navigationItem" title="What's Happening?" id="5nA-OQ-A3U"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="postButton" destination="Tql-F0-vHK" id="AV0-V9-4b6"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kHX-Fw-y7N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1850" y="490"/>
+            <point key="canvasLocation" x="1947" y="485"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BVf-Fw-m8l">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="83H-iB-kbI" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="FeedNavVC" automaticallyAdjustsScrollViewInsets="NO" id="83H-iB-kbI" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="j6N-nZ-NTf">

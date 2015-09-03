@@ -73,8 +73,20 @@ class SignUp: UIViewController, UITextFieldDelegate{
                             "post": "",
                             "username": self.usernameTextField.text]
 
+                        let firstPost = [
+                            "\(NSDate())": "Hi Everyone, I am In Town!!!!"]
+
 
                         self.rootRef.childByAppendingPath("Users").childByAppendingPath(authData.uid).setValue(newUser)
+
+                        self.rootRef.childByAppendingPath("Users/\(authData.uid)/Posts").setValue(firstPost)
+
+
+                        //once all the user has been created and logged in, we can allow him to see the application
+
+                        var storyboard = UIStoryboard(name: "Feed", bundle: nil)
+                        var controller = storyboard.instantiateViewControllerWithIdentifier("FeedNavVC") as! UINavigationController
+                        self.presentViewController(controller, animated:true, completion: nil)
                         
 
                     }

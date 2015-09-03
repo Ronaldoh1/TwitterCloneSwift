@@ -14,6 +14,8 @@ class WelcomeVC: UIViewController {
 @IBOutlet weak var signInButton: UIButton!
 @IBOutlet weak var signUpButton: UIButton!
 
+let rootRef = Firebase(url: "https://intown.firebaseio.com/")
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,6 +30,21 @@ class WelcomeVC: UIViewController {
         self.signInButton.layer.borderColor = UIColor.whiteColor().CGColor
         self.signUpButton.layer.borderColor = UIColor.whiteColor().CGColor
 }
+
+    override func viewDidAppear(animated: Bool) {
+
+        //check if the current user has already logged in. If so, then take him to the application.
+        if self.rootRef.authData != nil {
+
+            var storyboard = UIStoryboard(name: "Feed", bundle: nil)
+            var controller = storyboard.instantiateViewControllerWithIdentifier("FeedNavVC") as! UINavigationController
+            self.presentViewController(controller, animated:true, completion: nil)
+
+        }
+
+
+
+    }
 
 @IBAction func onSignInButtonTapped(sender: UIButton) {
 
