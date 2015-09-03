@@ -1,7 +1,120 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ay2-g7-qOm">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Intial Screen-->
+        <scene sceneID="Q6K-eP-pTU">
+            <objects>
+                <viewController title="Intial Screen" id="ay2-g7-qOm" customClass="WelcomeVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZoU-PQ-q2P"/>
+                        <viewControllerLayoutGuide type="bottom" id="q8A-eC-D5S"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jh6-7N-dXO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pce-Hv-OfQ">
+                                <rect key="frame" x="16" y="338" width="140" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="53t-hX-qHa"/>
+                                    <constraint firstAttribute="height" constant="36" id="Mvm-s8-q0K"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Sign In">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uCa-JS-Mj3">
+                                <rect key="frame" x="158" y="328" width="4" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="4" id="636-1h-dGA"/>
+                                    <constraint firstAttribute="height" constant="21" id="rb4-Ia-thL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMs-8L-hHr">
+                                <rect key="frame" x="164" y="338" width="140" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="0hz-OX-LpZ"/>
+                                    <constraint firstAttribute="height" constant="36" id="wRV-2i-WuI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fbb-2U-f4l">
+                                <rect key="frame" x="9" y="404" width="141" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="KUC-3j-cB1"/>
+                                </constraints>
+                                <state key="normal" image="facebookLoginButton.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W54-R0-dVe">
+                                <rect key="frame" x="171" y="404" width="140" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="EWF-GI-rAz"/>
+                                </constraints>
+                                <state key="normal" image="twitterLoginButton.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GlW-h3-ulT">
+                                <rect key="frame" x="157" y="413" width="7" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="tb9-ez-vYr"/>
+                                    <constraint firstAttribute="width" constant="7" id="vyz-Ou-C9l"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IntownLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="hE4-tK-bCy">
+                                <rect key="frame" x="0.0" y="64" width="320" height="229"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="GlW-h3-ulT" firstAttribute="leading" secondItem="Fbb-2U-f4l" secondAttribute="trailing" constant="7" id="2hI-xV-erZ"/>
+                            <constraint firstAttribute="centerY" secondItem="Pce-Hv-OfQ" secondAttribute="centerY" constant="-116" id="3Ww-x7-pGD"/>
+                            <constraint firstAttribute="centerX" secondItem="uCa-JS-Mj3" secondAttribute="centerX" id="9O1-ZW-rut"/>
+                            <constraint firstItem="hE4-tK-bCy" firstAttribute="leading" secondItem="Jh6-7N-dXO" secondAttribute="leadingMargin" constant="-16" id="AyA-v0-bd9"/>
+                            <constraint firstItem="W54-R0-dVe" firstAttribute="top" secondItem="gMs-8L-hHr" secondAttribute="bottom" constant="30" id="CZF-Pq-8D7"/>
+                            <constraint firstItem="uCa-JS-Mj3" firstAttribute="leading" secondItem="Pce-Hv-OfQ" secondAttribute="trailing" constant="2" id="QfN-T5-hIS"/>
+                            <constraint firstItem="q8A-eC-D5S" firstAttribute="top" secondItem="hE4-tK-bCy" secondAttribute="bottom" constant="187" id="VC9-SU-VA3"/>
+                            <constraint firstAttribute="centerY" secondItem="gMs-8L-hHr" secondAttribute="centerY" constant="-116" id="ZcA-6Z-KSM"/>
+                            <constraint firstItem="W54-R0-dVe" firstAttribute="leading" secondItem="GlW-h3-ulT" secondAttribute="trailing" constant="7" id="ah1-uM-Uhu"/>
+                            <constraint firstItem="gMs-8L-hHr" firstAttribute="leading" secondItem="uCa-JS-Mj3" secondAttribute="trailing" constant="2" id="aqK-JM-pkt"/>
+                            <constraint firstItem="hE4-tK-bCy" firstAttribute="top" secondItem="Jh6-7N-dXO" secondAttribute="topMargin" constant="64" id="bxB-I2-FdA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="W54-R0-dVe" secondAttribute="trailing" constant="-7" id="f69-j6-FLm"/>
+                            <constraint firstItem="Fbb-2U-f4l" firstAttribute="leading" secondItem="Jh6-7N-dXO" secondAttribute="leadingMargin" constant="-7" id="jiH-ax-qnH"/>
+                            <constraint firstAttribute="centerX" secondItem="GlW-h3-ulT" secondAttribute="centerX" id="lJx-Q3-nzF"/>
+                            <constraint firstAttribute="centerY" secondItem="GlW-h3-ulT" secondAttribute="centerY" constant="-183.5" id="lad-Df-WX5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hE4-tK-bCy" secondAttribute="trailing" constant="-16" id="sgG-wo-Zsw"/>
+                            <constraint firstAttribute="centerY" secondItem="uCa-JS-Mj3" secondAttribute="centerY" constant="-98.5" id="vph-lb-Ux6"/>
+                            <constraint firstItem="Fbb-2U-f4l" firstAttribute="top" secondItem="Pce-Hv-OfQ" secondAttribute="bottom" constant="30" id="xiN-G0-SV1"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gXi-CV-yO3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="482" y="446"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="IntownLogo.png" width="1569" height="1042"/>
+        <image name="facebookLoginButton.png" width="566" height="121"/>
+        <image name="twitterLoginButton.png" width="574" height="120"/>
+    </resources>
 </document>
